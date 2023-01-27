@@ -7,31 +7,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Autocompletion</title>
     <link rel="icon" type="images/png" sizes="64x64" href="img/Logo_onglet.png" />
+    <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
 
 <body>
     <header>
-
+        <section class="centrage">
+            <h1>L'encyclopédie du vivant</h1>
+        </section>
     </header>
 
     <main>
-        <h1>L'encyclopédie du vivant</h1>
+        <section class="centrage">
+            <form action="recherche.php" method="get">
+                <input type="text" name="search" id="search" autocomplete="off">
+                <input type="submit" value="Rechercher">
+            </form>
+            <div class="container_results">
+                <ul class="results_one" id="list">
 
-        <form action="recherche.php" method="get">
-            <label for="search">Rechercher</label>
-            <input type="text" name="search" id="search">
-            <input type="submit" value="Rechercher">
-        </form>
-        <div class="container_results">
-            <ul class="results_one" id="list">
+                </ul>
+                <hr>
+                <ul class="results_two" id="list2">
 
-            </ul>
-            <hr>
-            <ul class="results_two" id="list2">
-
-            </ul>
-        </div>
+                </ul>
+            </div>
+        </section>
     </main>
 
     <footer>

@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  height: 100px;
+  width: 100%;
+  background-color: #e7dfc6;
+}
+
+main {
+  margin-top: 110px;
+}
+
+.centrage {
+  width: 90%;
+  margin: auto;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  margin-bottom: 1%;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.3rem;
+  transition: all 0.5s;
+}
+
+ul li a:hover {
+  color: rgb(0, 0, 0);
+  font-size: 1.35rem;
+}
+
+#titre {
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+}
+
+/* ************************** */
+
+#flex {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#results_header {
+  position: absolute;
+  top: 35%;
+  width: 15%;
+  background-color: #e7dfc6;
+}
+
+/* ************************** */
+
+main form {
+  width: 50%;
+  margin: auto;
+  margin-top: 45vh;
+}
+
+main form input[type="text"] {
+  width: 75%;
+  height: 40px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 0 10px;
+  font-size: 1.3rem;
+}
+
+main form input[type="submit"] {
+  width: 20%;
+  height: 40px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 0 10px;
+  font-size: 1.3rem;
+  background-color: #333;
+  color: #fff;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+main form input[type="submit"]:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+.container_results {
+  width: 50%;
+  margin: auto;
+  margin-top: 2%;
+  max-height: 30vh;
+  overflow: auto;
+  border: 1px solid rgba(51, 51, 51, 0.753);
+  border-radius: 5px;
+}
+
+.element table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.element table tr td,
+.element table tr th {
+  border: 1px solid rgba(51, 51, 51, 0.753);
+  padding: 5px;
+}

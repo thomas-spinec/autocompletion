@@ -11,7 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
       if (
         response[i].nom.toLowerCase().startsWith(text) ||
         response[i].regime.toLowerCase().startsWith(text) ||
-        response[i].continent.toLowerCase().startsWith(text)
+        response[i].continent.toLowerCase().startsWith(text) ||
+        response[i].classe.toLowerCase().startsWith(text)
       ) {
         results_1.push(response[i]);
       }
@@ -22,7 +23,8 @@ document.addEventListener("DOMContentLoaded", function () {
       if (
         response[i].nom.toLowerCase().includes(text) ||
         response[i].regime.toLowerCase().includes(text) ||
-        response[i].continent.toLowerCase().includes(text)
+        response[i].continent.toLowerCase().includes(text) ||
+        response[i].classe.toLowerCase().includes(text)
       ) {
         results_2.push(response[i]);
       }
