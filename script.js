@@ -4,14 +4,15 @@ document.addEventListener("DOMContentLoaded", function () {
   function resultats(text, response, results) {
     let results_1 = [];
     let results_2 = [];
-    console.log(text);
-    console.log(response);
+    console.log("text :" + text);
+    console.log("bdd :" + response);
     // recherche des résultats pour la première liste
     for (let i = 0; i < response.length; i++) {
       if (
         response[i].nom.toLowerCase().startsWith(text) ||
         response[i].regime.toLowerCase().startsWith(text) ||
-        response[i].continent.toLowerCase().startsWith(text)
+        response[i].continent.toLowerCase().startsWith(text) ||
+        response[i].classe.toLowerCase().startsWith(text)
       ) {
         results_1.push(response[i]);
       }
@@ -22,7 +23,8 @@ document.addEventListener("DOMContentLoaded", function () {
       if (
         response[i].nom.toLowerCase().includes(text) ||
         response[i].regime.toLowerCase().includes(text) ||
-        response[i].continent.toLowerCase().includes(text)
+        response[i].continent.toLowerCase().includes(text) ||
+        response[i].classe.toLowerCase().includes(text)
       ) {
         results_2.push(response[i]);
       }
@@ -36,7 +38,15 @@ document.addEventListener("DOMContentLoaded", function () {
         const li = document.createElement("li");
         const lien = document.createElement("a");
         lien.setAttribute("href", "element.php?id=" + result.id);
-        lien.innerHTML = result.nom;
+        lien.innerHTML =
+          result.nom +
+          " (" +
+          result.regime +
+          " de la classe des " +
+          result.classe +
+          ". Continent de vie: " +
+          result.continent +
+          ")";
         li.appendChild(lien);
         list1.appendChild(li);
       });
@@ -51,7 +61,15 @@ document.addEventListener("DOMContentLoaded", function () {
         const li = document.createElement("li");
         const lien = document.createElement("a");
         lien.setAttribute("href", "element.php?id=" + result.id);
-        lien.innerHTML = result.nom;
+        lien.innerHTML =
+          result.nom +
+          " (" +
+          result.regime +
+          " de la classe des " +
+          result.classe +
+          ". Continent de vie: " +
+          result.continent +
+          ")";
         li.appendChild(lien);
         list2.appendChild(li);
       });

@@ -18,7 +18,7 @@
     <main>
         <h1>L'encyclopédie du vivant</h1>
 
-        <form action="">
+        <form action="recherche.php" method="get">
             <label for="search">Rechercher</label>
             <input type="text" name="search" id="search">
             <input type="submit" value="Rechercher">
@@ -35,7 +35,6 @@
     </main>
 
     <footer>
-        <a href=""></a>
     </footer>
 </body>
 
