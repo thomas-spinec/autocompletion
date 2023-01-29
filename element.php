@@ -1,9 +1,15 @@
 <?php
-// connexion à la bdd via PDO
+// connexion à la bdd via PDO en local
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "autocompletion";
+
+// connexion à la bdd via PDO en ligne
+// $servername = "localhost";
+// $username = "adminbdd"
+// password = "basededonnees"
+// $dbname = "thomas-spinec_autocompletion"
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
