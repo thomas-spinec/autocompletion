@@ -61,84 +61,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // résultats de la recherche
-  function recherche(text) {
-    let search1 = [];
-    let search2 = [];
-    fetch("bdd.php")
-      .then((response) => response.json())
-      .then((response) => {
-        // console.log(response);
-        // affichage des résultats
-        // recherche des résultats pour la première liste
-        for (let i = 0; i < response.length; i++) {
-          if (
-            response[i].nom.toLowerCase().startsWith(text) ||
-            response[i].regime.toLowerCase().startsWith(text) ||
-            response[i].continent.toLowerCase().startsWith(text) ||
-            response[i].classe.toLowerCase().startsWith(text)
-          ) {
-            search1.push(response[i]);
-          }
-        }
-
-        // recherche des résultats pour la deuxième liste
-        for (let i = 0; i < response.length; i++) {
-          if (
-            response[i].nom.toLowerCase().includes(text) ||
-            response[i].regime.toLowerCase().includes(text) ||
-            response[i].continent.toLowerCase().includes(text) ||
-            response[i].classe.toLowerCase().includes(text)
-          ) {
-            search2.push(response[i]);
-          }
-        }
-        // affichage des résultats de la première liste
-        if (search1.length > 0) {
-          console.log(search1);
-          const recherches1 = document.querySelector("#recherches1");
-          // recherches1.innerHTML = "";
-          search1.forEach((result) => {
-            const li = document.createElement("li");
-            const lien = document.createElement("a");
-            lien.setAttribute("href", "element.php?id=" + result.id);
-            lien.innerHTML =
-              result.nom +
-              " (" +
-              result.regime +
-              " de la classe des " +
-              result.classe +
-              ". Continent de vie: " +
-              result.continent +
-              ")";
-            li.appendChild(lien);
-            recherches1.appendChild(li);
-          });
-        }
-        // affichage des résultats de la deuxième liste
-        if (search2.length > 0) {
-          console.log(search2);
-          const recherches2 = document.querySelector("#recherches2");
-          recherches2.innerHTML = "";
-          search2.forEach((result) => {
-            const li = document.createElement("li");
-            const lien = document.createElement("a");
-            lien.setAttribute("href", "element.php?id=" + result.id);
-            lien.innerHTML =
-              result.nom +
-              " (" +
-              result.regime +
-              " de la classe des " +
-              result.classe +
-              ". Continent de vie: " +
-              result.continent +
-              ")";
-            li.appendChild(lien);
-            recherches2.appendChild(li);
-          });
-        }
-      });
-  }
   // définition de la zone de recherche
   const search = document.querySelector("#search");
   let text = search.value;
@@ -146,9 +68,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const results = document.querySelector(".container_results");
   // dissimulation de la partie résultat
   results.style.display = "none";
-
-  // affichage des résultats de la recherche (lors du click)
-  recherche(text);
 
   // écoute de la zone de recherche
   search.addEventListener("keyup", () => {

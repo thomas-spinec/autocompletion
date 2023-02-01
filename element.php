@@ -45,7 +45,7 @@ $result = $select->fetch(PDO::FETCH_ASSOC);
     <title>Element</title>
     <link rel="icon" type="images/png" sizes="64x64" href="img/Logo_onglet.png" />
     <link rel="stylesheet" href="style.css">
-    <script src="script_search.js"></script>
+    <script src="script_element.js"></script>
 </head>
 
 <body>
